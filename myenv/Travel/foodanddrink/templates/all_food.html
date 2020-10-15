@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<title>Food And Drinks</title>
+<section class="blog-area section-gap">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 pb-30 header-text">
+        <h1>Food and drinks</h1>
+        <p>
+        </p>
+      </div>
+    </div>
+
+      <font type="Segoe Print" size="5" color="brouwn" bjcolor="red"> - LATEST POSTS // FOOD</font>
+      <br>
+      <br>
+        <div class="row">
+      {% for i in all_food %}
+            <div class="single-blog col-lg-4 col-md-4">
+                 <a href="{% url 'foodanddrink:det_food' i.slug %}"><img class="f-img img-fluid mx-auto" src={{i.img1.url}} alt=""></a>
+              <h4>
+                <a href="{% url 'foodanddrink:det_food' i.slug %}">{{i.tilte}}</a>
+              </h4>
+              <br>
+            </div>
+        {% endfor %}
+        </div>
+        <br>
+          <hr>
+          <br>
+      <font type="Segoe Print" size="5" color="brouwn" bjcolor="bl"> - LATEST POSTS // WINE</font>
+        <br>
+        <br>
+        <div class="row">
+          {% for j in all_drink %}
+
+                  <div class="single-blog col-lg-4 col-md-4">
+                  <a href="{% url 'foodanddrink:det_food' j.slug %}"><img class="f-img img-fluid mx-auto" src={{j.img1.url}} alt=""></a>
+                  <h4>
+                  <a href="{% url 'foodanddrink:det_food' j.slug %}">{{j.tilte}}</a>
+                    </h4>
+                      <br>
+                  </div>
+
+            {% endfor %}
+         </div>
+    </div>
+
+</section>
+{% endblock %}

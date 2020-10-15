@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+	<title>history {{hi.contry_name}}</title>
+    <section class="home-about spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-text">
+											<br><br>
+                        <h2>A brief history of {{hi.contry_name}} , language and culture</h2><br><h4>history of {{hi.contry_name|capfirst}}</h4>
+                        <p class="short-details">{{hi.history|capfirst}}</p><br>
+                        <h4>langunge of {{hi.contry_name|capfirst}}</h4>
+                        <p class="long-details">{{hi.langunge|capfirst}}</p><br>
+                          <h4>culture of {{hi.contry_name|capfirst}}</h4>
+                          <p class="long-details">{{hi.culture|capfirst}}</p><br>
+
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-img">
+                        <img src="{{hi.img.url}}" width=450px alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html"%}
+{% load static %}
+<!doctype html>
+{% block body %}
+	<title>{{file.contry_name}}</title>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    <div id="overlayer"></div>
+    <div class="site-wrap" id="home-section">
+      <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+          <div class="site-mobile-menu-close mt-3">
+            <span class="icon-close2 js-menu-toggle"></span>
+          </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+      </div>
+      <div class="block__73694 site-section border-top" id="why-us-section">
+        <div class="container">
+          <div class="row d-flex no-gutters align-items-stretch">
+            <div class="col-12 col-lg-6 block__73422 order-lg-2" style="background-image:" data-aos="fade-left" data-aos-delay="">
+             <img src="{{file.img.url}}" width=600px>
+            </div>
+            <div class="col-lg-5 mr-auto p-lg-5 mt-4 mt-lg-0 order-lg-1" data-aos="fade-right" data-aos-delay="">
+              <h2 class="mb-4 text-black">{{file.contry_name}} travel guide</h2>
+              <h4 class="text-primary">About {{file.contry_name}}</h4>
+              <p>{{file.about}}</p>
+
+              <ul class="ul-check primary list-unstyled mt-5">
+                <li><a href="{% url 'Travel:image_contry' file.slug %}">image for this contry</a></li>
+                <li><a href="{% url 'Travel:history_contry' file.slug %}">history & langunge & culture for this contry</a></li>
+                <li><a href="{% url 'Travel:wather_geograohy' file.slug %}">weather & geography for this contry</a></li>
+								  <li><a href="{% url 'Travel:Image_food' file.slug %}">Pictures of lash food</a></li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  {% endblock %}

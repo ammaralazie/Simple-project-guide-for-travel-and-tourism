@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+	<title>Weather and geography {{wage.contry_name}}</title>
+    <section class="home-about spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-text">
+											<br><br>
+                        <h2>Weather and geography of {{wage.contry_name}}</h2><br>
+
+                        <h4>Weather of {{wage.contry_name}}</h4>
+                        <p class="long-details">{{wage.wather|capfirst}}</p><br>
+                          <h4>geography of {{wage.contry_name}}</h4>
+                          <p class="long-details">{{wage.geography|capfirst}}</p><br>
+
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-img">
+                        <img src="{{wage.img.url}}" width=450px alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}

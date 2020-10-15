@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<title>Some Important Features</title>
+<section class="blog-area section-gap">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 pb-30 header-text">
+        <h1>Some important features</h1>
+        <p>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      {% for i in all_feat %}
+      <div class="single-blog col-lg-4 col-md-4">
+        <img class="f-img img-fluid mx-auto" src={{i.img1.url}} alt="">
+        <h4>
+          <a href="{% url 'features:all_detail' i.slug %}">{{i.tilte}}</a>
+        </h4>
+      </div>
+        {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

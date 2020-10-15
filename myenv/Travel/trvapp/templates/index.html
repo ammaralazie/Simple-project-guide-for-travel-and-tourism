@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+			<section class="banner-area relative" id="home">
+				<div class="container">
+						<div class="row fullscreen align-items-center justify-content-center">
+							<div class="banner-content col-lg-6 col-md-12">
+								<h1 class="text-uppercase">
+								 Editorial Foreword	 <br>
+
+								</h1>
+								<p>
+								  The World Travel Guide (WTG) is the flagship digital consumer brand within the Columbus Travel Media portfolio. Available in English, German, and Spanish versions, the WTG provides detailed and accurate travel content designed to inspire global travellers. It covers all aspects, from cities to airports, cruise ports to ski and beach resorts, attractions to events, and it also includes offbeat travel news, stories, quizzes and guides for adventurous travellers.
+								</p>
+											</div>
+							<div class="col-lg-6 d-flex align-self-end img-right">
+								<img class="img-fluid" src="{% static 'home-static/img/header-img.jpg' %}" alt="">
+							</div>
+						</div>
+				</div>
+			</section>
+
+			<section class="feature-area section-gap" id="service">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="single-feature d-flex flex-row pb-30">
+
+				</div>
+			</section>
+
+			<section class="blog-area section-gap">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-md-8 pb-30 header-text">
+							<h1>Directory of countries</h1>
+							<p>
+							
+							</p>
+						</div>
+					</div>
+
+					<div class="row">
+						{% for i in file %}
+						<div class="single-blog col-lg-4 col-md-4">
+
+							<img class="f-img img-fluid mx-auto" src={{i.img.url}} alt="">
+							<h4>
+								<a href="{% url 'Travel:detail_contry' i.slug %}">{{i.contry_name}}</a>
+							</h4>
+							<p>
+								{{i.about|truncatewords:25}}
+							</p>
+						</div>
+							{% endfor %}
+					</div>
+
+				</div>
+			</section>
+{%endblock%}
